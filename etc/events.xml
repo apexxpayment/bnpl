@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="payment_method_assign_data">
+        <observer name="bnpl_payment_gateway_data_assign"
+                  instance="Apexx\Bnpl\Observer\DataAssignObserver" />
+    </event>
+    <!-- Update status -->
+     <event name="sales_order_place_after">
+        <observer name="apexx_bnpl_payment_place_order_after" instance="Apexx\Bnpl\Observer\OrderObserver" />
+    </event>
+    <!-- Restrict BNPL Payment method for AX2 -->
+    <event name="payment_method_is_active">
+        <observer name="restrict_bnpl_payment_ax2api" instance="Apexx\Bnpl\Observer\DisabledBnplPayment" />
+    </event>
+</config>

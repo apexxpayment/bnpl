@@ -1,0 +1,30 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="apexx_section">
+                <group id="apexxpayment">
+                    <group id="bnpl_gateway" translate="label" type="text" sortOrder="25"
+                   showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Bnpl Settings</label>
+                            <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                                <label>Enabled</label>
+                                <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                                <config_path>payment/bnpl_gateway/active</config_path>
+                            </field>
+                            <field id="title" translate="label" type="text" sortOrder="2" showInDefault="1"
+                           showInWebsite="1" showInStore="1">
+                                <label>Title</label>
+                                <config_path>payment/bnpl_gateway/title</config_path>
+                            </field>
+                            <field id="payment_method_list" translate="label" type="multiselect" sortOrder="15"
+                                   showInDefault="1" showInWebsite="1" showInStore="0">
+                                <label>Select Payment Provider</label>
+                                <source_model>Apexx\Bnpl\Model\Adminhtml\Source\PaymentMethodList</source_model>
+                            </field>
+                    </group>
+                </group>
+            </group>
+        </section>
+    </system>
+</config>

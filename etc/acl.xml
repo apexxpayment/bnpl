@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Custom payment method in Magento 2
+ * @category    Bnpl
+ * @package     Apexx_Bnpl
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <!-- ACL for Allow Apexx Bnpl menus -->
+                <resource id="Apexx_Bnpl::paymentinfo" sortOrder="10" title="Custom Payment">
+                    <resource id="Apexx_Bnpl::paymentgroup" sortOrder="10" title="Payment Group Management"/>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

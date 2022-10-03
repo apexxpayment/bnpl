@@ -1,0 +1,16 @@
+<div class="checkout-success">
+    <p>
+        <?php
+            $objBnplFailure = $this->getBnplFailureMessage();
+            if (isset($objBnplFailure['orderId'])) {
+                echo $block->escapeHtml(__('Your Order #') . $objBnplFailure['orderId']);
+            }
+            if (isset($objBnplFailure['bnplfailure']['status'])) {
+                echo $block->escapeHtml(__(' is ') . strtolower($objBnplFailure['bnplfailure']['status']));
+            }
+            if (isset($objBnplFailure['bnplfailure']['reason_message'])) {
+                echo $block->escapeHtml(__(' because of ') . $objBnplFailure['bnplfailure']['reason_message']);
+            }
+        ?>
+    </p>
+</div>

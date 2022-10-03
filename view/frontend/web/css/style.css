@@ -1,0 +1,26 @@
+#checkout .apexx-payment-method-icons ul {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+#checkout .apexx-payment-method-icons ul li.apexx-item {
+    display: block;
+    width: 100px;
+    height: 50px;
+    vertical-align: top;
+}
+#checkout .apexx-payment-method-icons ul li {
+    display: block;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    list-style: none;
+    padding: 10px;
+    cursor: pointer;
+    box-sizing: border-box;
+    margin:10px;
+}
+#checkout .apexx-payment-method-icons ul li img {
+    width: 50px;
+    vertical-align: top;
+}

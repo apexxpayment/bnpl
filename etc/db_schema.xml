@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Custom payment method in Magento 2
+ * @category    Bnpl
+ * @package     Apexx_Bnpl
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="apexx_bnpl_paygroup" resource="default" engine="innodb" comment="Payment Group Details">
+        <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="Payment Group Id"/>
+        <column xsi:type="text" name="payment_title" nullable="true" comment="Payment Group Title"/>
+        <column xsi:type="text" name="payment_code" nullable="true" comment="Payment Group Code"/>
+        <column xsi:type="text" name="payment_type" nullable="true" comment="Payment Type"/>
+        <column xsi:type="text" name="payment_action" nullable="true" comment="Payment Action"/>
+        <column xsi:type="text" name="payment_image" nullable="true" comment="Payment Group Image"/>
+        <column xsi:type="smallint" name="status" padding="6" unsigned="false" nullable="false" identity="false" comment="Status"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Created At"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Updated At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+        <index referenceId="USER_REFFERAL_ID" indexType="btree">
+            <column name="id"/>
+        </index>
+    </table>
+</schema>
