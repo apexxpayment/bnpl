@@ -6,13 +6,13 @@
  */
 namespace Apexx\Bnpl\Controller\Index;
 
-use Exception;
 use Magento\Checkout\Model\Session as CheckoutSession;
 use Apexx\Base\Helper\Logger\Logger as CustomLogger;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\App\CsrfAwareActionInterface;
 use Magento\Framework\App\Request\InvalidRequestException;
 use Magento\Framework\App\RequestInterface;
+use Magento\Framework\Controller\ResultFactory;
 
 class PaymentCode extends \Magento\Framework\App\Action\Action implements CsrfAwareActionInterface
 {
@@ -45,9 +45,17 @@ class PaymentCode extends \Magento\Framework\App\Action\Action implements CsrfAw
 
     public function execute()
     {
+        $controllerResult = $this->resultFactory->create(ResultFactory::TYPE_JSON);
+        $responseContent = [
+            'success' => true,
+            'error_message' => '',
+        ];
+
         $this->checkoutSession->unsApexxBnplPaymentCode();
         $paymentType = $this->request->getParam('paymentMethodType');
         $this->checkoutSession->setApexxBnplPaymentCode($paymentType);
+
+        return $controllerResult->setData($responseContent);
     }
 
     /**

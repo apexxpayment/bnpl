@@ -19,7 +19,7 @@ use Magento\Framework\UrlInterface;
 use Magento\Checkout\Model\Session;
 use Magento\Sales\Model\OrderRepository;
 use Magento\Sales\Model\OrderFactory;
-use Magento\Sales\Api\Data\OrderInterface;
+use Magento\Sales\Model\Order;
 use Psr\Log\LoggerInterface;
 use Magento\Sales\Model\Order\Payment\Transaction\Builder;
 use Apexx\Bnpl\Helper\InvoiceGenerate as CustomInvoice;
@@ -64,7 +64,7 @@ class Response extends \Magento\Framework\App\Action\Action implements CsrfAware
     protected $orderRepository;
 
     /**
-     * @var OrderInterface
+     * @var Order
      */
     protected $order;
 
@@ -108,7 +108,7 @@ class Response extends \Magento\Framework\App\Action\Action implements CsrfAware
      * @param UrlInterface $urlInterface
      * @param Session $checkoutSession
      * @param OrderRepository $orderRepository
-     * @param OrderInterface $order
+     * @param Order $order
      * @param OrderFactory $orderFactory
      * @param LoggerInterface $logger
      * @param Builder $transactionBuilder
@@ -125,7 +125,7 @@ class Response extends \Magento\Framework\App\Action\Action implements CsrfAware
         UrlInterface $urlInterface,
         Session $checkoutSession,
         OrderRepository $orderRepository,
-        OrderInterface $order,
+        Order $order,
         OrderFactory $orderFactory,
         LoggerInterface $logger,
         Builder $transactionBuilder,
