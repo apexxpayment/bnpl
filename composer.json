@@ -1,6 +1,6 @@
 {
   "name": "apexxpayment/bnpl",
-  "description": "Apexx Bnpl Module",
+  "description": "Apexx BNPL Module",
   "require": {
         "apexxpayment/base": "1.0.7"
     },
