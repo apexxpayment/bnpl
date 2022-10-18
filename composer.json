@@ -1,11 +1,11 @@
 {
-  "name": "apexx/bnpl",
+  "name": "apexxpayment/bnpl",
   "description": "Apexx Bnpl Module",
   "require": {
         "apexxpayment/base": "1.0.7"
     },
   "type": "magento2-module",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": [
     "OSL-3.0",
     "AFL-3.0"
