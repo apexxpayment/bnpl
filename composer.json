@@ -4,7 +4,7 @@
   "require": {
         "apexxpayment/base": "1.0.8"
     },
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "prefer-stable" : true,
   "type": "magento2-module",
   "version": "1.0.3",
